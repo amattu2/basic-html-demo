@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>amattu2, NWIT 101, HTML Page</title>
+		<style>
+			HTML, body { margin: 0; padding: 0; }
+			body {
+				font-family: sans-serif;
+				background: #f2f2f2;
+				position: relative;
+			}
+
+			.card {
+				background: #fff;
+				border-radius: 3px;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+				margin: 25px;
+				padding: 25px;
+			}
+
+			.card.main {
+				text-align: center;
+			}
+
+			.card.main span {
+				font-size: 35px;
+				color: #3b3b3b;
+			}
+
+			.card-title {
+				margin-bottom: 15px;
+			}
+
+			.card-title-number {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0;
+				font-size: 14px;
+				background: #3b3b3b;
+				border-radius: 50%;
+				color: #fff;
+				margin-right: 8px;
+				width: 28px;
+				height: 28px;
+			}
+
+			.card-title .card-title-text {
+				font-weight: bold;
+				opacity: 0.8;
+				text-align: left;
+				font-size: 17px;
+			}
+
+			.card-text {
+				font-size: 15px;
+				text-align: left;
+			}
+
+			.card-image {
+				text-align: center;
+			}
+
+			.card-image img {
+				width: 240px;
+				height: auto;
+				margin: 0 auto;
+				margin-top: 15px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class='card main'>
+			<span>https://github.com/amattu2</span>
+		</div>
+
+		<div class='card'>
+			<div class='card-title'>
+				<span class='card-title-number'>1.</span>
+				<span class='card-title-text'>Introduction</span>
+			</div>
+			<div class='card-text'>Although this is far from my first web page built with HTML, I am still following the instructions like a good student. <br/><br/>PS, I created this at 1:18pm on 10/09/2019.</div>
+		</div>
+
+		<div class='card'>
+			<div class='card-title'>
+				<span class='card-title-number'>2.</span>
+				<span class='card-title-text'>To-Do List</span>
+			</div>
+			<div class='card-text'>Below is a list of items I will complete:</div>
+			<div class='card-list'>
+				<ul>
+					<li>Create First Page</li>
+					<li>Create Second Page</li>
+					<li>Upload Pages To AWS</li>
+					<li>Complete Class Activity #6</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class='card'>
+			<div class='card-title'>
+				<span class='card-title-number'>3.</span>
+				<span class='card-title-text'>Course Description Link</span>
+			</div>
+			<div class='card-text'>Click the picture below to open the course description information document.</div>
+			<div class='card-image'>
+				<a href='course_description.html' target="_blank">
+					<img src='picture.png' />
+				</a>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script>
+			// Variables
+			let items = document.querySelectorAll('li');
+
+			// UI
+			for (let i = 0; i < items.length; i++) {
+				// Variables
+				let item = items[i];
+				let span = document.createElement('span');
+
+				// Attributes
+				span.style.textDecoration = "underline";
+				span.style.color = "blue";
+				span.style.marginLeft = "5px";
+				span.style.cursor = "pointer";
+				span.innerText = "(Mark complete)";
+
+				// Events
+				span.onclick = function() {
+					item.style.textDecoration = "line-through";
+					span.outerHTML = "";
+				}
+
+				// Append
+				item.appendChild(span);
+			}
+		</script>
+	</body>
+</html>
